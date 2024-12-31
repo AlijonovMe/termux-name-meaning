@@ -5,7 +5,7 @@ init(autoreset=True)
 
 name = input(Fore.BLUE + "Ismingizni kiriting: ")
 
-url = f"https://api.alijonov.uz/api/ismlar.php?name={na>
+url = f"https://api.alijonov.uz/api/ismlar.php?name={name}"
 
 response = requests.get(url)
 
@@ -14,7 +14,7 @@ if response.status_code == 200:
 
     if data['success']:
         for item in data['data']:
-            print(f"{Fore.GREEN}Ismi: {item['name']}\nM>
+            print(f"{Fore.GREEN}Ismi: {item['name']}\nMa'nosi: {item['meaning']}")
     else:
         print(f"{Fore.RED}Ism topilmadi.")
 else:
