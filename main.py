@@ -12,10 +12,8 @@ response = requests.get(url)
 if response.status_code == 200:
     data = response.json()
 
-    if data['success']:
-        for item in data['data']:
-            print(f"{Fore.GREEN}Ismi: {item['name']}\nMa'nosi: {item['meaning']}")
-    else:
-        print(f"{Fore.RED}Ism topilmadi.")
+    for item in data['data']:
+        print(f"{Fore.GREEN}Ismi: {item['name']}\nMa'nosi: {item['meaning']}")
+
 else:
     print(f"{Fore.RED}Xatolik: {response.status_code}")
